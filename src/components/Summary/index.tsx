@@ -2,7 +2,7 @@ import { Container } from "./styles";
 import React, { useContext } from "react";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
-import totalImg from "../../assets/total.svg"; 
+import totalImg from "../../assets/total.svg";
 import { useTransactions } from "../../hooks/useTransactions";
 
 export function Summary() {
@@ -21,7 +21,7 @@ export function Summary() {
         acc.total += transaction.amount;
       } else {
         acc.withdraws += transaction.amount;
-        acc.total += transaction.amount;
+        acc.total -= transaction.amount;
       }
       return acc;
     },
